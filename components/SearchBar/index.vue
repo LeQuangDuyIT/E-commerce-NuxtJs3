@@ -14,7 +14,7 @@ const inputValue = defineModel();
       <Icon
         @click="inputValue = ''"
         name="ion:md-close"
-        class="text-2xl opacity-20 cursor-pointer"
+        class="text-2xl opacity-20 hover:opacity-100 cursor-pointer"
       />
     </div>
   </div>

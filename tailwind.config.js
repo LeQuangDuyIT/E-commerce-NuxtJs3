@@ -2,9 +2,22 @@
 export default {
   content: [],
   theme: {
-    extend: {
-    
-    }
+    extend: {}
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.arrow-hide': {
+          '&::-webkit-inner-spin-button': {
+            '-webkit-appearance': 'none',
+            margin: 0
+          },
+          '&::-webkit-outer-spin-button': {
+            '-webkit-appearance': 'none',
+            margin: 0
+          }
+        }
+      });
+    })
+  ]
 };

@@ -13,10 +13,7 @@
           <ProductCard
             v-for="product in DATA_PRODUCTS"
             :key="product.id"
-            :name="product.name"
-            :price="product.price"
-            :thumbnailFront="product.thumbnailFront"
-            :thumbnailBack="product.thumbnailBack"
+            :product="product"
             class="w-[calc(25%-16px*3/4)]"
           />
         </div>

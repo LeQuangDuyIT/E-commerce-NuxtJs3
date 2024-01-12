@@ -1,28 +1,14 @@
 <script setup>
-defineProps({
-  // product: {
-  //   type: ProductType,
-  //   default: {}
-  // },
-  name: {
-    type: String,
-    default: ''
-  },
-  price: {
-    type: Number,
-    default: 0
-  },
-  thumbnailFront: {
-    type: String,
-    default: ''
-  },
-  thumbnailBack: {
-    type: String,
-    default: ''
+const { product } = defineProps({
+  product: {
+    type: Object,
+    default: {}
   }
 });
+const { id, name, price, thumbnailFront, thumbnailBack } = product;
 
 const isHovering = ref(false);
+const { cart, handleAdd } = useCart();
 </script>
 
 <template>
@@ -35,7 +21,10 @@ const isHovering = ref(false);
       <div class="w-6 h-0.5 bg-[#EABF00]"></div>
       <h4>$ {{ price }}</h4>
     </div>
-    <button class="w-full py-4 text-white bg-black hover:bg-[#EABF00] cursor-pointer">
+    <button
+      class="w-full py-4 text-white bg-black hover:bg-[#EABF00] cursor-pointer"
+      @click="handleAdd(product)"
+    >
       Add to card
     </button>
   </div>
